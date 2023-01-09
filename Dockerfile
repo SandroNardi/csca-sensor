@@ -12,6 +12,8 @@ RUN apt-get update \
 && apt-get install -y \
 libglib2.0-0 liblzo2-2 libltdl7 libpcap0.8 zlib1g
 
+RUN apt --fix-broken install
+
 RUN wget https://onstatic.s3.amazonaws.com/ona/master/ona-service_RaspbianJessie_armhf.deb
 
 RUN dpkg -i ona-service_RaspbianJessie_armhf.deb
