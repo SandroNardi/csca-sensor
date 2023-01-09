@@ -1,5 +1,6 @@
 # syntax=docker/dockerfile:1
-FROM debian:10-slim
+#FROM debian:10-slim
+FROM python:3.11.1-slim-buster
 
 WORKDIR /swc
 
@@ -12,6 +13,8 @@ RUN apt-get update \
 libglib2.0-0 liblzo2-2 libltdl7 libpcap0.8 zlib1g
 
 RUN apt-get install -y wget
+
+RUN apt-get intall -y python3
 
 RUN wget https://onstatic.s3.amazonaws.com/ona/master/ona-service_RaspbianJessie_armhf.deb
 
